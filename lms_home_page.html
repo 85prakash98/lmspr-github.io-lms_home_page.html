@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>home_page</title>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        outline: none;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    body {
+        height: 100vh;
+    }
+    html{
+        font-size: 10px;
+    }
+    .logo{
+        position: absolute;
+        left: 5rem;
+        border-color: rgb(14, 6, 6);
+        border-radius: .5rem;
+        border: 0.5rem;
+    }
+
+    .container
+    {
+        height: 100%;
+    }
+    .header
+    {
+        height: 8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+    }
+    .header h2
+    {
+        text-shadow: 5px 5px 13px rgb(16, 7, 95);
+        color: black;
+    }
+    .loginSystem
+    {
+        position: absolute;
+        top: 2.5rem;
+        right: 2rem;
+    }
+    .loginSystem button
+    {
+        width: 8rem;
+        height: 3rem;
+        background-color: rgb(117, 196, 0);
+        border: none;
+        color: white;
+        font-weight: bold;
+        border-radius: .5rem;
+        box-shadow: .2rem .3rem .6rem 0rem rgb(59, 9, 24);
+        cursor: pointer;
+    }
+    .main
+    {
+        height: calc(100vh - 10.5rem);
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+    .nav
+    {
+        height: 100%;
+        flex: 1;
+        box-shadow: .2rem .4rem 1.4rem 1rem rgb(47, 207, 15);
+        border-radius: .7rem;
+        margin-right: 1rem;
+        margin-left: 1.5rem;
+        
+    }
+
+    .nav-menu
+        {
+        list-style: none;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 2rem;
+        
+        }
+    .nav-menu-item
+        {
+        height: 2rem;
+        width: 100%;
+        text-align: center;
+        padding: 2.3rem 2rem;
+        margin: 1.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3.5rem;
+        box-shadow: 0px .2rem 1.5rem -4rem rgb(207, 11, 11);
+        cursor: pointer;
+        text-decoration: none;
+        background-color: aqua;
+    }
+    .nav-links
+        {
+        color: black;
+        font-size: 2rem;
+    }
+    .pages
+    {
+        flex: 4;
+        box-shadow: 1rem 4rem 1.4rem .1rem rgb(206, 17, 149);
+        border-radius: .7rem;
+        margin: 0 1rem;
+        overflow: hidden;
+    }
+    .page-content
+    {
+        height: 100%;
+        padding: 1rem 2rem;
+    }
+    .pageHead
+    {
+    height: 5.5rem;
+    padding: .8rem 0;
+
+    border-bottom: .3rem solid black;
+    text-align: center;
+    margin: auto;
+    }
+    .pageItem
+    {
+        padding: 1.5rem 1rem;
+        text-align: justify;
+    }
+    #home
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    #home .pageHead
+    {
+        margin-top: 0rem;
+        border: none;
+    }
+    #home .pageItem p
+    {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    #about p
+    {
+        line-height: 1.5;
+        font-size: 1.2rem;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+        input[type=text],
+        input[type=email],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.1rem;
+            border: .1rem solid #ccc;
+            border-radius: .4rem;
+            box-sizing: border-box;
+            margin-bottom: 0.1rem;    
+    }
+    input[type=submit] {
+        background-color: rgb(117, 196, 0);
+        color: white;
+        padding: .2rem 2rem;
+        border: none;
+        border-radius: .4rem;
+        cursor: pointer;
+    }
+    input[type=submit]:hover {
+        background-color: rgb(130, 209, 12);
+    }
+    .footer
+    {
+        position: absolute;
+        left: 0;
+        bottom: .5rem;
+        font-size: 1rem;
+        padding-left: 2rem;
+        color: rgb(14, 6, 6);
+        background-color: yellowgreen;
+
+        width: 100%;
+        text-align: center;
+    }
+    @media screen and (max-width: 960px){
+        body{
+            background-color: aqua;
+        }
+
+    }
+    @media screen and (max-width: 768px){
+        body{
+            background-color: green;
+        } 
+        html{
+            font-size: 50%;
+        }
+    }
+    @media screen and (max-width: 520px){
+        body{
+            background-color: blue;
+        }
+        html{
+            font-size: 45%;
+        }
+
+    }
+    @media screen and (max-width: 420px){
+        body{
+            background-color: yellowgreen;
+        }
+        html{
+            font-size: 40%;
+        }
+        .container .header h2{
+            font-size: 15px;
+            color: bisque;
+        }
+
+    }
+</style>
+</head>
+    <body>
+        <div class="logo">
+            <img src="logo.png" height="80" alt="logo">
+        </div>
+        <div class="container">
+            <div class="header">
+                <h2>Learning Management System</h2>
+                <div class="loginSystem">
+                <a href=""><button class="signup"> Sign
+                Up</button></a>
+                <a href=""><button class="login"> Log in</button></a>
+            </div>
+        </div>
+        <div class="main">
+        <div class="nav">
+            <ul class="nav-menu">
+                <a href="#home" class="nav-menu-item">
+                <li class="nav-links">Home</li>
+                </a>
+                <a href="#about" class="nav-menu-item">
+                <li class="nav-links">About</li>
+                </a>
+                <a href="#courses" class="nav-menu-item">
+                <li class="nav-links">Courses</li>
+                </a>
+                <a href="#contact" class="nav-menu-item">
+                <li class="nav-links">Contact</li>
+                </a>
+                <a href="#career" class="nav-menu-item">
+                <li class="nav-links">Career</li>
+                </a>
+            </ul>
+        </div>
+        <div class="pages">
+            <div id="home" class="page-content">
+                <div class="pageHead">
+                    <img src="lmspic.png" width="400" alt="">
+                </div>
+                <div class="pageItem">
+                    <p>Start Learning with us</p>
+                </div>
+
+            </div>
+            <div id="about" class="page-content">
+                <div class="pageHead">
+                <h1>About Us</h1>
+            </div>
+            <div class="pageItem">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Quas cupiditate nulla aperiam?
+                Recusandae modi est deserunt autem consectetur
+                laboriosam ratione reprehenderit nisi,
+                placeat aliquam corrupti nesciunt! Deleniti eos
+                accusantium, obcaecati debitis, recusandae
+                odit ut similique maxime impedit facilis culpa vero
+                laudantium corporis ex corrupti
+                distinctio nostrum eligendi, illo nulla quo deserunt
+                beatae magni? Quod autem, aliquam
+                pariatur iusto quia labore eos impedit quis libero
+                ipsam illum quasi odio exercitationem
+                animi vitae porro perspiciatis rerum dolorem! Aliquam
+                sint illum ipsa magnam? Vel id
+                reiciendis cum, perferendis repellat laboriosam
+                cupiditate necessitatibus recusandae fuga
+                illo sit doloribus animi, voluptate ipsum amet cumque
+                numquam. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Numquam eius repellat
+                eos ad expedita facilis ut eligendi
+                ducimus delectus exercitationem veniam natus aut
+                molestias sapiente iure vel, enim earum
+                dolorum, fugiat, fuga quasi! Perspiciatis qui vero
+                consequuntur, neque, sunt quis officia
+                animi quam, sapiente explicabo earum expedita natus
+                voluptates impedit est iure minus libero
+                enim id obcaecati aspernatur. Pariatur sapiente sequi
+                inventore asperiores ipsam, error
+                repudiandae neque nihil quidem voluptatibus molestias
+                culpa tempore? Atque cupiditate, amet
+                voluptatem, exercitationem dolorum ut ipsam adipisci
+                voluptates vel temporibus id soluta
+                animi recusandae numquam consequuntur.
+                 </p>
+            </div>
+        </div>
+       
+            <div id="contact" class="page-content">
+                <div class="pageHead">
+                <h1>Contact Us</h1>
+            </div>
+        <div  class="pageItem">
+        <form method="get" action="/home.html" class="form">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name"/>
+        <label for="email">Email Id</label>
+        <input type="email" id="email" placeholder="Your Email address" />
+        <label for="contact">Contact No</label>
+        <input type="text" id="contact" placeholder="Your contact number" />
+        <label for="country">Courses</label>
+    <select id="country" name="country">
+        <option value="australia">HTML</option>
+        <option value="canada">CSS</option>
+        <option value="usa">JavaScript</option>
+        <option value="usa">Java</option>
+        <option value="usa">Python</option>
+        <option value="usa">Ruby</option>
+    </select>
+        <label for="textarea">Query</label>
+        <textarea placeholder="Write your query..." cols="20"
+        rows="5" id="textarea"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+    </div>
+        <div id="career" class="page-content">
+            <div class="pageHead">
+            <h1>Career</h1>
+        </div>
+        <div class="pageItem">
+        <p>Comming Soon....</p>
+        </div>
+
+        </div>
+    </div>
+     </div> 
+     <div class="footer">
+         <p><b>Copyright &copy; 2023 | PRAKASH KUMAR </B></p>
+     </div>
+     </body>
+     </html>
